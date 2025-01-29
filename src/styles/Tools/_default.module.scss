@@ -1,0 +1,13 @@
+body *,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fira Code";
+  cursor: default;
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer !important;
+}

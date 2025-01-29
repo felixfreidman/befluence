@@ -1,0 +1,41 @@
+.Footer {
+  width: 100%;
+  display: flex;
+
+  &__contactTable {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid $lightGrey;
+  }
+
+  &__textColumn {
+    padding: 15px 22px;
+    font-weight: 450;
+    font-size: 16px;
+    line-height: 21px;
+    color: $font_grey;
+    border-right: 1px solid $lightGrey;
+  }
+
+  &__socialColumn {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid $lightGrey;
+    gap: 5px;
+
+    a {
+      font-weight: 450;
+      font-size: 16px;
+      line-height: 21px;
+      color: $font_grey;
+    }
+
+    &:last-child {
+      border: none;
+      border-left: 1px solid $lightGrey;
+      margin-left: auto;
+    }
+  }
+}
