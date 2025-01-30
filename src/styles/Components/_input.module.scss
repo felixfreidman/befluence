@@ -1,0 +1,52 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  gap: 8px;
+
+  &__bigWidth {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  &__labelHeader {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: $lightGrey;
+  }
+
+  &__inputContainer {
+    width: 100%;
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 8px;
+    top: 13px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    border: 1px solid $font_darkGrey;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: $font_darkGrey;
+    border-radius: 8px;
+
+    &::placeholder {
+      color: $font_placeholder;
+    }
+  }
+
+  &__icon + &__input {
+    padding: 8px 16px 8px 32px;
+  }
+}
