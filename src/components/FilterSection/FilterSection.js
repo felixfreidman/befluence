@@ -2,6 +2,7 @@ import React from 'react'
 import filterIcon from '../../images/icons/filter.svg'
 import classes from '../../index.module.scss'
 import Input from '../UI/Input/Input'
+import Select from '../UI/Select/Select'
 
 export default function FilterSection() {
     return (
@@ -21,6 +22,7 @@ export default function FilterSection() {
                 >
                     Search
                 </Input>
+                <Select />
             </div>
         </div>
     )

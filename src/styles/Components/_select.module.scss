@@ -1,2 +1,52 @@
 .Select {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+
+  &__opened {
+    color: #ff0000;
+  }
+
+  &__selectContainer {
+    width: 100%;
+    border: 1px solid $font_darkGrey;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: $font_darkGrey;
+    border-radius: 8px;
+  }
+
+  &__optionsContainer {
+    width: 100%;
+    position: absolute;
+    top: 34px;
+    left: 0;
+    background-color: $font_white;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid $font_darkGrey;
+  }
+
+  &__option {
+    width: 100%;
+    border-bottom: 1px solid $font_darkGrey;
+    padding: 4px 16px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: $font_darkGrey;
+    background-color: $font_white;
+
+    &:last-child {
+      border: none;
+      border-radius: 0 0 8px 8px;
+    }
+  }
 }
