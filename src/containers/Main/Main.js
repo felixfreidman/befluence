@@ -6,6 +6,7 @@ export default function Main() {
     return (
         <div className={classes.MainPage}>
             <FilterSection />
+
         </div>
     )
 }

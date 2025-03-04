@@ -1,6 +1,4 @@
-@import "./header.module";
 @import "./codeFrag.module";
-@import "./footer.module";
-@import "./filterSection.module";
-@import "./input.module";
-@import "./select.module";
+@import "./CodeFrag/FilterSection/filterSection.module";
+@import "./UI/input.module";
+@import "./UI/select.module";

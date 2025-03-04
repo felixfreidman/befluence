@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from '../../index.module.scss'
-import Header from '../../components/Structure/Header/Header'
-import Footer from '../../components/Structure/Footer/Footer'
+import Header from '../../containers/UI/Header/Header'
+import Footer from '../../containers/UI/Footer/Footer'
 
 export default function Layout(props) {
-
+    console.log(props.children)
 
     return (
         <div className={classes.Layout}>

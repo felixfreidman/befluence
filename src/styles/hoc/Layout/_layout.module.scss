@@ -6,6 +6,9 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
+  max-width: 1600px;
+  position: relative;
+  padding: 8px 0;
 
   .main {
     width: 100%;

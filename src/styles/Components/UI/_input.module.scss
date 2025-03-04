@@ -7,14 +7,14 @@
 
   &__bigWidth {
     grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 5;
   }
 
   &__labelHeader {
-    font-weight: 400;
     font-size: 20px;
     line-height: 120%;
     color: $lightGrey;
+    font-weight: 600;
   }
 
   &__inputContainer {
