@@ -23,6 +23,14 @@ export default function FilterSection() {
             optionValue: 'kick',
             optionName: 'Kick'
         },
+        {
+            optionValue: 'telegram',
+            optionName: 'Telegram'
+        },
+        {
+            optionValue: 'youtube',
+            optionName: 'YouTube'
+        },
     ]
 
     const genderOptions = [

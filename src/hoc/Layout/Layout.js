@@ -3,8 +3,9 @@ import classes from '../../index.module.scss'
 import Header from '../../containers/UI/Header/Header'
 import Footer from '../../containers/UI/Footer/Footer'
 
+console.log(classes)
+
 export default function Layout(props) {
-    console.log(props.children)
 
     return (
         <div className={classes.Layout}>

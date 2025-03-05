@@ -1,0 +1,38 @@
+.Table {
+  width: 100%;
+  height: 600px;
+  background-color: $font_white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  border-radius: 16px;
+  overflow: hidden;
+  gap: 4px;
+
+  &Head {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80px 1fr 0.5fr 1.2fr 0.8fr 1.5fr 100px;
+    background-color: $bg_lgGrey;
+    border-bottom: 1px solid $font_darkGrey;
+
+    &__value {
+      font-size: 16px;
+      line-height: 100%;
+      color: $font_darkGrey;
+      font-weight: 600;
+      padding: 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:nth-child(2) {
+        justify-content: flex-start;
+      }
+
+      &:nth-child(3) {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
