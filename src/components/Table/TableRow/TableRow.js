@@ -45,13 +45,16 @@ export default function TableRow(props) {
 
     return (
         <div className={classes.TableRow}>
-            <TableCell class={clsSex.join(' ')} value={props.sex} />
-            <TableCell class={cls.join(' ')} value={props.name} isNew={props.isNew} />
+            <TableCell class={cls.join(' ')} value={props.name} />
             <TableCell class={cls.join(' ')} value={props.category} />
-            <TableCell class={cls.join(' ')} value={props.country} />
+            <TableCell class={cls.join(' ')} value={props.location} />
             <TableCell class={clsPlatform.join(' ')} value={props.platform} />
+            <TableCell class={cls.join(' ')} value={props.followers} />
+            <TableCell class={cls.join(' ')} value={props.online} />
+            <TableCell class={cls.join(' ')} value={props.price} />
             <TableCell class={clsLink.join(' ')} value={props.link} isLink={true} />
             <TableCell class={cls.join(' ')} value={props.isBet} />
+            <TableCell class={cls.join(' ')} value={props.date} />
         </div >
     )
 }

@@ -1,3 +1,4 @@
+import axios from "../../axios/axios-table";
 import { FETCH_TABLEDATA_START, FETCH_TABLEDATA_ERROR, FETCH_TABLEDATA_SUCCESS } from "./actionTypes"
 
 
@@ -54,34 +55,34 @@ const response = [
     },
 ]
 
+
 export function fetchTableData() {
-    // return async dispatch => {
-    //     dispatch(fetchQuizesStart())
-    //     try {
-    //         const response = await axios.get('quizes.json');
-    //         const quizes = [];
-    //         Object.keys(response.data).forEach((key, index) => {
-    //             quizes.push({
-    //                 id: key,
-    //                 name: `Test ${index + 1}`
-    //             })
-    //         })
-    //         dispatch(fetchQuizesSuccess(quizes))
-    //     } catch (error) {
-    //         console.log(error);
-    //         dispatch(fetchQuizesError(error))
-    //     }
-    // }
-
-    return dispatch => {
+    return async dispatch => {
         dispatch(fetchTableDataStart())
-        const tableData = [];
-        Object.values(response).forEach((value, index) => {
-            tableData.push(value)
-        })
-        dispatch(fetchTableDataSuccess(tableData))
+        try {
+            const response = await axios.get('streamers.json');
+            const tableData = [];
+            Object.values(response.data).forEach((value, index) => {
+                console.log(value);
+                tableData.push(value)
+            })
 
+            dispatch(fetchTableDataSuccess(tableData))
+        } catch (error) {
+            // console.log(error);
+            // dispatch(fetchTableDataError(error))
+        }
     }
+
+    // return dispatch => {
+    //     dispatch(fetchTableDataStart())
+    //     const tableData = [];
+    //     Object.values(response).forEach((value, index) => {
+    //         tableData.push(value)
+    //     })
+    //     dispatch(fetchTableDataSuccess(tableData))
+
+    // }
 }
 
 export function fetchTableDataStart() {
