@@ -2,8 +2,9 @@ import { Route, Routes } from 'react-router-dom';
 import classes from './index.module.scss'
 import Layout from './hoc/Layout/Layout';
 import Main from './containers/Main/Main';
+import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
   return (
     <div className={classes.App}>
       <Layout>
@@ -16,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

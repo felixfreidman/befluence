@@ -1,71 +1,77 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import classes from '../../index.module.scss'
 import TableRow from '../../components/Table/TableRow/TableRow'
+import { fetchTableData } from '../../store/actions/table'
+import { connect } from 'react-redux'
 
-export default function Table() {
+function Table(props) {
+    useEffect(() => {
+        props.fetchTableData()
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    const tableData = [
-        {
-            infName: 'SlicerSSH',
-            infSex: 'Male',
-            infCategory: 'Gambling',
-            infCountry: 'Germany',
-            infPlatform: 'Twitch',
-            infLink: 'https://twitch.com',
-            isNew: false,
-            isBet: true,
-        },
-        {
-            infName: 'SlicerSSL',
-            infSex: 'Male',
-            infCategory: 'Gambling',
-            infCountry: 'France',
-            infPlatform: 'Kick',
-            infLink: 'https://twitch.com',
-            isNew: true,
-            isBet: true,
-        },
-        {
-            infName: 'SlicerSSX',
-            infSex: 'Female',
-            infCategory: 'Gambling',
-            infCountry: 'Brazil',
-            infPlatform: 'Instagram',
-            infLink: 'https://twitch.com',
-            isNew: false,
-            isBet: true,
-        },
-        {
-            infName: 'SlicerSSX',
-            infSex: 'Female',
-            infCategory: 'Gambling',
-            infCountry: 'Brazil',
-            infPlatform: 'YouTube',
-            infLink: 'https://twitch.com',
-            isNew: false,
-            isBet: false,
-        },
-        {
-            infName: 'SlicerSSX',
-            infSex: 'Female',
-            infCategory: 'Gambling',
-            infCountry: 'Brazil',
-            infPlatform: 'TikTok',
-            infLink: 'https://twitch.com',
-            isNew: false,
-            isBet: false,
-        },
-        {
-            infName: 'SlicerSSX',
-            infSex: 'Female',
-            infCategory: 'Gambling',
-            infCountry: 'Brazil',
-            infPlatform: 'Telegram',
-            infLink: 'https://twitch.com',
-            isNew: false,
-            isBet: false,
-        },
-    ]
+
+    // const tableData = [
+    //     {
+    //         infName: 'SlicerSSH',
+    //         infSex: 'Male',
+    //         infCategory: 'Gambling',
+    //         infCountry: 'Germany',
+    //         infPlatform: 'Twitch',
+    //         infLink: 'https://twitch.com',
+    //         isNew: false,
+    //         isBet: true,
+    //     },
+    //     {
+    //         infName: 'SlicerSSL',
+    //         infSex: 'Male',
+    //         infCategory: 'Gambling',
+    //         infCountry: 'France',
+    //         infPlatform: 'Kick',
+    //         infLink: 'https://twitch.com',
+    //         isNew: true,
+    //         isBet: true,
+    //     },
+    //     {
+    //         infName: 'SlicerSSX',
+    //         infSex: 'Female',
+    //         infCategory: 'Gambling',
+    //         infCountry: 'Brazil',
+    //         infPlatform: 'Instagram',
+    //         infLink: 'https://twitch.com',
+    //         isNew: false,
+    //         isBet: true,
+    //     },
+    //     {
+    //         infName: 'SlicerSSX',
+    //         infSex: 'Female',
+    //         infCategory: 'Gambling',
+    //         infCountry: 'Brazil',
+    //         infPlatform: 'YouTube',
+    //         infLink: 'https://twitch.com',
+    //         isNew: false,
+    //         isBet: false,
+    //     },
+    //     {
+    //         infName: 'SlicerSSX',
+    //         infSex: 'Female',
+    //         infCategory: 'Gambling',
+    //         infCountry: 'Brazil',
+    //         infPlatform: 'TikTok',
+    //         infLink: 'https://twitch.com',
+    //         isNew: false,
+    //         isBet: false,
+    //     },
+    //     {
+    //         infName: 'SlicerSSX',
+    //         infSex: 'Female',
+    //         infCategory: 'Gambling',
+    //         infCountry: 'Brazil',
+    //         infPlatform: 'Telegram',
+    //         infLink: 'https://twitch.com',
+    //         isNew: false,
+    //         isBet: false,
+    //     },
+    // ]
 
     return (
         <div className={classes.Table}>
@@ -79,7 +85,7 @@ export default function Table() {
                 <span className={classes.TableHead__value}>Ready <br />to bet</span>
             </div>
             {
-                tableData.map((row, index) => (
+                props.tableData.map((row, index) => (
                     <TableRow
                         sex={row.infSex[0]}
                         name={row.infName}
@@ -96,3 +102,19 @@ export default function Table() {
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        tableData: state.table.tableData,
+        loading: state.table.loading,
+        error: state.table.error,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchTableData: () => { dispatch(fetchTableData()) },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table)
